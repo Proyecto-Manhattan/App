@@ -1,4 +1,4 @@
-# **D´Veritas Proyect**
+# **D´Veritas Proyect** /play yeah
 ## Android APP :neckbeard:
 
 * *Android D´Veritas*
