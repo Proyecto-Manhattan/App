@@ -34,25 +34,43 @@
             android:background="#ffffff">
 
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="70dp"/>
 
             <TextView
                 android:text="@string/user"
                 android:layout_width="match_parent"
                 android:paddingLeft="20dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3"/>
+                android:id="@+id/textView1"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:text=""
                 android:paddingLeft="20dp"
-                android:text="Name"
                 android:ems="10"
-                android:id="@+id/editText2" />
+                android:id="@+id/userName" />
+
+            <TextView
+                android:text="@string/password"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text=""
+                android:paddingLeft="20dp"
+                android:ems="10"
+                android:id="@+id/passWord" />
+
 
 
         </LinearLayout>
