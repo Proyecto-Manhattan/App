@@ -23,9 +23,11 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:weightSum="1">
+            
+
 
             <ImageView
                 android:layout_width="match_parent"
@@ -34,14 +36,16 @@
                 android:id="@+id/imageView"
                 android:background="#000"/>
 
-
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
             <TextView
                 android:text="@string/user"
                 android:layout_width="match_parent"
-                android:paddingLeft="20dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:fontFamily="sans-serif" />
 
@@ -49,15 +53,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:background="@drawable/edit_text_design"
                 android:text=""
-                android:paddingLeft="20dp"
                 android:ems="10"
                 android:id="@+id/userName" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
             <TextView
                 android:text="@string/password"
                 android:layout_width="match_parent"
-                android:paddingLeft="20dp"
+                android:textColor="#000"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
                 android:textSize="24sp"
@@ -68,10 +76,12 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:text=""
-                android:paddingLeft="20dp"
                 android:ems="10"
                 android:id="@+id/passWord" />
 
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
             <Button
                 android:text="@string/login"
