@@ -12,14 +12,6 @@
     tools:context="com.example.usuariopc.app2.MainActivity"
     android:background="@drawable/background">
 
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -36,9 +28,6 @@
                 android:id="@+id/imageView"
                 android:background="#000"/>
 
-            <android.support.v4.widget.Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
 
             <TextView
                 android:text="@string/user"
@@ -47,6 +36,7 @@
                 android:id="@+id/textView1"
                 android:textColor="#000"
                 android:textSize="24sp"
+                android:layout_marginTop="50dp"
                 android:fontFamily="sans-serif" />
 
             <EditText
@@ -55,15 +45,11 @@
                 android:inputType="textPersonName"
                 android:hint="User Name"
                 android:textColorHint="#aaa"
-                style="@style/FullWidthEditText"
                 android:textColor="#000"
                 android:text=""
                 android:ems="10"
                 android:id="@+id/userName" />
 
-            <android.support.v4.widget.Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
 
             <TextView
                 android:text="@string/password"
@@ -71,6 +57,7 @@
                 android:textColor="#000"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
+                android:layout_marginTop="50dp"
                 android:textSize="24sp"
                 android:fontFamily="sans-serif" />
 
@@ -80,25 +67,21 @@
                 android:inputType="textPassword"
                 android:hint="Password"
                 android:textColorHint="#aaa"
-                style="@style/FullWidthEditText"
-                android:textColor="#aaa"
+                android:textColor="#000"
                 android:text=""
                 android:ems="10"
                 android:id="@+id/passWord" />
 
-            <android.support.v4.widget.Space
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
-
             <Button
                 android:text="@string/login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="80dp"
                 android:id="@+id/button"
                 android:layout_weight="0.45" />
 
 
         </LinearLayout>
 
-    </RelativeLayout>
+
 </RelativeLayout>
