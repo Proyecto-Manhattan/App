@@ -53,7 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:background="@drawable/edit_text_design"
+                android:hint="User Name"
+                android:textColorHint="#aaa"
+                style="@style/FullWidthEditText"
+                android:textColor="#000"
                 android:text=""
                 android:ems="10"
                 android:id="@+id/userName" />
@@ -75,6 +78,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:hint="Password"
+                android:textColorHint="#aaa"
+                style="@style/FullWidthEditText"
+                android:textColor="#aaa"
                 android:text=""
                 android:ems="10"
                 android:id="@+id/passWord" />

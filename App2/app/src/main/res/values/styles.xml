@@ -7,5 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="FullWidthEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:padding">20dp</item>
+        <item name="android:background">#eee</item>
+        <item name="android:textSize">@dimen/abc_text_size_subhead_material</item>
+        <item name="colorControlNormal">#000</item>
+        <item name="colorControlActivated">#0f0</item>
 
+    </style>
 </resources>
