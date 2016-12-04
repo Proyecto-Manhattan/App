@@ -1,0 +1,193 @@
+####################################################
+Carpeta layout
+	actividad 2
+	row item
+###################################################
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.usuariopc.app2.Main2Activity">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lista"
+        />
+
+
+</RelativeLayout>
+
+#####################################################
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:id="@+id/imgUsuario" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgUsuario"
+        android:id="@+id/txtUsuario"
+        android:layout_alignBottom="@+id/imgUsuario" />
+
+</RelativeLayout>
+
+####################################################
+Carpeta java
+	actividad 2
+	adaptador
+	usuario
+###################################################
+
+package com.example.usuariopc.app2;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Main2Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        RecyclerView rv= (RecyclerView) findViewById(R.id.lista);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rv.setLayoutManager(llm);
+        List<Usuario> listaUsuarios= Arrays.asList(new Usuario(R.mipmap.ic_launcher,"Vic"),
+                                                   new Usuario(R.mipmap.ic_launcher,"Emi"),
+                                                   new Usuario(R.mipmap.ic_launcher,"Jho"),
+                                                   new Usuario(R.mipmap.ic_launcher,"Hor"));
+        Adaptador adapter = new Adaptador(listaUsuarios);
+        rv.setAdapter(adapter);
+    }
+}
+
+##################################################################################
+
+package com.example.usuariopc.app2;
+
+import android.media.Image;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.List;
+
+/**
+ * Created by Worren Gilgamesh on 03/12/2016.
+ */
+
+public class Adaptador extends RecyclerView.Adapter<Adaptador.usuarioViewHolder> {
+
+    List<Usuario> listUsers;
+
+    public Adaptador(List<Usuario> listUsers) {
+        this.listUsers = listUsers;
+    }
+
+    @Override
+    public usuarioViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item, parent, false );
+        usuarioViewHolder holder=new usuarioViewHolder(v);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(usuarioViewHolder holder, int position) {
+        holder.imgUsuario.setImageResource(listUsers.get(position).getFoto());
+        holder.txtUsuario.setText(listUsers.get(position).getNombre());
+    }
+
+    @Override
+    public int getItemCount() {
+        return listUsers.size();
+    }
+
+    public static class usuarioViewHolder extends RecyclerView.ViewHolder{
+        ImageView imgUsuario;
+        TextView txtUsuario;
+
+        public usuarioViewHolder(View itemView) {
+            super(itemView);
+            imgUsuario= (ImageView) itemView.findViewById(R.id.imageView);
+            txtUsuario= (TextView) itemView.findViewById(R.id.txtUsuario);
+        }
+    }
+
+}
+
+##################################################################################################
+
+package com.example.usuariopc.app2;
+
+/**
+ * Created by Worren Gilgamesh on 03/12/2016.
+ */
+
+public class Usuario {
+    private int foto;
+    private String nombre;
+
+    public Usuario(int foto, String nombre) {
+        this.foto = foto;
+        this.nombre = nombre;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+}
+
+
+
+
+
+
+
+
+
